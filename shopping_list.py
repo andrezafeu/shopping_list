@@ -10,11 +10,16 @@ def add_item():
 		if item == "DONE":
 			break
 
+		if item in shopping_list:
+			print("This item is already on your list.")
+			continue
+
 		if item == "SHOW":
 			print_list()
 
 		elif item == "HELP":
 			show_commands()
+			
 		else:
 			shopping_list.append(item)
 			print("Added {}. The list now has {} item(s)".format(item, len(shopping_list)))
